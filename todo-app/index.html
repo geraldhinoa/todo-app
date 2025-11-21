@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>To-Do List Anti Mager — PRO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>To-Do List Anti Mager</h1>
+        <div class="controls-top">
+          <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+          <label class="sound-toggle">
+            <input type="checkbox" id="soundToggle" />
+            🔔
+          </label>
+        </div>
+      </header>
+
+      <section class="card">
+        <form id="taskForm" class="task-form" autocomplete="off">
+          <input id="taskInput" placeholder="Tulis tugasmu..." required />
+          <select id="emojiSelect" title="Pilih emoji">
+            <option value="🧠">🧠 Fokus</option>
+            <option value="🔥">🔥 Penting</option>
+            <option value="📚">📚 Belajar</option>
+            <option value="💻">💻 Koding</option>
+            <option value="🛒">🛒 Belanja</option>
+            <option value="☕">☕ Istirahat</option>
+          </select>
+          <button type="submit" id="addBtn">Tambah</button>
+        </form>
+
+        <div class="stats" aria-live="polite">
+          <span id="totalCount">0</span> tugas •
+          <span id="doneCount">0</span> selesai •
+          <span id="leftCount">0</span> sisa
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <div class="card-footer">
+          <button id="clearDone">Hapus selesai</button>
+          <button id="clearAll" class="danger">Hapus semua</button>
+        </div>
+      </section>
+
+      <!-- Motivasi modal (simple) -->
+      <div
+        id="motivModal"
+        class="modal hidden"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-body">
+          <p id="motivText"></p>
+          <button id="closeMotiv">Sip!</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
